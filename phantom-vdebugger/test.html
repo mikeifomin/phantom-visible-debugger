@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>event.pageX demo</title>
+    <style>
+        body {
+            background-color: #eef;
+        }
+        div {
+            padding: 20px;
+        }
+    </style>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+     <div id="point" style="position: absolute;top:0px;left:0px;width:5px;height: 5px;background-color: red;"></div>
+<div id="log"></div>
+
+<script>
+    $( document ).on( "mousemove", function( event ) {
+        $("#point").css('top',event.pageY+'px');
+        $("#point").css('left',event.pageX+'px');
+        $( "#log" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+    });
+</script>
+
+</body>
+</html>
